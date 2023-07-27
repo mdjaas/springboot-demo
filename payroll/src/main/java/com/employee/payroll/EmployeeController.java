@@ -57,7 +57,10 @@ class EmployeeController {
                     return repository.save(newEmployee);
                 });
     }
-
+    @DeleteMapping("/employees")
+    void deleteall(Employee emp){
+        repository.deleteAll();
+    }
     @DeleteMapping("/employees/{id}")
     void deleteEmployee(@PathVariable Long id) {
         repository.deleteById(id);
